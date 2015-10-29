@@ -1,0 +1,16 @@
+PODS:
+  - AERecord (2.0.0)
+  - FontAwesome.swift (0.6.2)
+  - QuadratTouch (1.1.1)
+
+DEPENDENCIES:
+  - AERecord
+  - FontAwesome.swift
+  - QuadratTouch (>= 1.0)
+
+SPEC CHECKSUMS:
+  AERecord: 63313541906da457a51d808c1e0244b494dbb59f
+  FontAwesome.swift: d40ac0a660f079c77945bab632ca20bf46ddc1ac
+  QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
+
+COCOAPODS: 0.39.0
