@@ -14,6 +14,7 @@
 		DCFACA0F1BE1D0C400AD0EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA0D1BE1D0C400AD0EE7 /* Main.storyboard */; };
 		DCFACA111BE1D0C400AD0EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */; };
 		DCFACA141BE1D0C400AD0EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */; };
+		DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA1B1BE1D48E00AD0EE7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCFACA131BE1D0C400AD0EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCFACA151BE1D0C400AD0EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFACA1B1BE1D48E00AD0EE7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
 				DCFACA151BE1D0C400AD0EE7 /* Info.plist */,
 				DCFACA061BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld */,
+				DCFACA1B1BE1D48E00AD0EE7 /* README.md */,
 			);
 			path = LunchAtFueled;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */,
 				DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */,
+				DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */,
 				DCFACA0A1BE1D0C400AD0EE7 /* MasterViewController.swift in Sources */,
 				DCFACA0C1BE1D0C400AD0EE7 /* DetailViewController.swift in Sources */,
 			);
