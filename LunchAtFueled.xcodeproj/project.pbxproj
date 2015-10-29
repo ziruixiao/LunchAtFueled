@@ -15,6 +15,7 @@
 		DCFACA111BE1D0C400AD0EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */; };
 		DCFACA141BE1D0C400AD0EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */; };
 		DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA1B1BE1D48E00AD0EE7 /* README.md */; };
+		DCFACA1E1BE1D88700AD0EE7 /* MVC.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA1D1BE1D88700AD0EE7 /* MVC.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DCFACA131BE1D0C400AD0EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCFACA151BE1D0C400AD0EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCFACA1B1BE1D48E00AD0EE7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCFACA1D1BE1D88700AD0EE7 /* MVC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MVC.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
 				DCFACA151BE1D0C400AD0EE7 /* Info.plist */,
 				DCFACA061BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld */,
+				DCFACA1D1BE1D88700AD0EE7 /* MVC.png */,
 				DCFACA1B1BE1D48E00AD0EE7 /* README.md */,
 			);
 			path = LunchAtFueled;
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFACA1E1BE1D88700AD0EE7 /* MVC.png in Resources */,
 				DCFACA141BE1D0C400AD0EE7 /* LaunchScreen.storyboard in Resources */,
 				DCFACA111BE1D0C400AD0EE7 /* Assets.xcassets in Resources */,
 				DCFACA0F1BE1D0C400AD0EE7 /* Main.storyboard in Resources */,
