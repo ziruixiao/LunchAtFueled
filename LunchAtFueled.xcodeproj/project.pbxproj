@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6009C2DC9FA84D474531FA01 /* Pods_LunchAtFueled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */; };
+		DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE501BE2A3C400A891A9 /* Connection.swift */; };
+		DCF1AE661BE2B38B00A891A9 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */; };
+		DCF1AE671BE2B38B00A891A9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */; };
+		DCF1AE681BE2B38B00A891A9 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */; };
+		DCF1AE691BE2B38B00A891A9 /* VenueTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */; };
+		DCF1AE6B1BE2B3AF00A891A9 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */; };
+		DCF1AE6D1BE421FE00A891A9 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE6C1BE421FE00A891A9 /* Venue.swift */; };
+		DCF1AE721BE43ABC00A891A9 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE711BE43ABC00A891A9 /* APIModel.swift */; };
 		DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA041BE1D0C400AD0EE7 /* AppDelegate.swift */; };
 		DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA061BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld */; };
-		DCFACA0A1BE1D0C400AD0EE7 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA091BE1D0C400AD0EE7 /* MasterViewController.swift */; };
-		DCFACA0C1BE1D0C400AD0EE7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFACA0B1BE1D0C400AD0EE7 /* DetailViewController.swift */; };
 		DCFACA0F1BE1D0C400AD0EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA0D1BE1D0C400AD0EE7 /* Main.storyboard */; };
 		DCFACA111BE1D0C400AD0EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */; };
 		DCFACA141BE1D0C400AD0EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */; };
@@ -23,11 +29,17 @@
 		49168524D76A473A538A7E56 /* Pods-LunchAtFueled.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7FBF439003B3A10C87D69C /* Pods-LunchAtFueled.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.release.xcconfig"; sourceTree = "<group>"; };
 		7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchAtFueled.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF1AE501BE2A3C400A891A9 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTipsViewController.swift; sourceTree = "<group>"; };
+		DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		DCF1AE6C1BE421FE00A891A9 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		DCF1AE711BE43ABC00A891A9 /* APIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		DCFACA011BE1D0C400AD0EE7 /* LunchAtFueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchAtFueled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFACA041BE1D0C400AD0EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFACA071BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LunchAtFueled.xcdatamodel; sourceTree = "<group>"; };
-		DCFACA091BE1D0C400AD0EE7 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		DCFACA0B1BE1D0C400AD0EE7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DCFACA0E1BE1D0C400AD0EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCFACA131BE1D0C400AD0EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +77,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DCF1AE591BE2AABD00A891A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCF1AE6C1BE421FE00A891A9 /* Venue.swift */,
+				DCF1AE711BE43ABC00A891A9 /* APIModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DCF1AE5A1BE2AAC400A891A9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DCF1AE5B1BE2AAC900A891A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */,
+				DCFACA151BE1D0C400AD0EE7 /* Info.plist */,
+				DCFACA1D1BE1D88700AD0EE7 /* MVC.png */,
+				DCFACA1B1BE1D48E00AD0EE7 /* README.md */,
+				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DCFAC9F81BE1D0C400AD0EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,15 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				DCFACA041BE1D0C400AD0EE7 /* AppDelegate.swift */,
-				DCFACA091BE1D0C400AD0EE7 /* MasterViewController.swift */,
-				DCFACA0B1BE1D0C400AD0EE7 /* DetailViewController.swift */,
 				DCFACA0D1BE1D0C400AD0EE7 /* Main.storyboard */,
-				DCFACA101BE1D0C400AD0EE7 /* Assets.xcassets */,
-				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
-				DCFACA151BE1D0C400AD0EE7 /* Info.plist */,
 				DCFACA061BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld */,
-				DCFACA1D1BE1D88700AD0EE7 /* MVC.png */,
-				DCFACA1B1BE1D48E00AD0EE7 /* README.md */,
+				DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */,
+				DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */,
+				DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */,
+				DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */,
+				DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */,
+				DCF1AE501BE2A3C400A891A9 /* Connection.swift */,
+				DCF1AE591BE2AABD00A891A9 /* Model */,
+				DCF1AE5A1BE2AAC400A891A9 /* View Controllers */,
+				DCF1AE5B1BE2AAC900A891A9 /* Supporting Files */,
 			);
 			path = LunchAtFueled;
 			sourceTree = "<group>";
@@ -223,11 +265,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF1AE691BE2B38B00A891A9 /* VenueTipsViewController.swift in Sources */,
+				DCF1AE6D1BE421FE00A891A9 /* Venue.swift in Sources */,
 				DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */,
+				DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */,
+				DCF1AE721BE43ABC00A891A9 /* APIModel.swift in Sources */,
+				DCF1AE661BE2B38B00A891A9 /* ExploreViewController.swift in Sources */,
+				DCF1AE671BE2B38B00A891A9 /* FriendsViewController.swift in Sources */,
 				DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */,
 				DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */,
-				DCFACA0A1BE1D0C400AD0EE7 /* MasterViewController.swift in Sources */,
-				DCFACA0C1BE1D0C400AD0EE7 /* DetailViewController.swift in Sources */,
+				DCF1AE681BE2B38B00A891A9 /* SearchTableViewController.swift in Sources */,
+				DCF1AE6B1BE2B3AF00A891A9 /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
