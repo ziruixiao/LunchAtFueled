@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6009C2DC9FA84D474531FA01 /* Pods_LunchAtFueled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */; };
+		DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D957F1BE9418B00244DC2 /* Tip.swift */; };
 		DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE501BE2A3C400A891A9 /* Connection.swift */; };
 		DCF1AE661BE2B38B00A891A9 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */; };
 		DCF1AE671BE2B38B00A891A9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */; };
@@ -29,6 +30,7 @@
 		49168524D76A473A538A7E56 /* Pods-LunchAtFueled.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7FBF439003B3A10C87D69C /* Pods-LunchAtFueled.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.release.xcconfig"; sourceTree = "<group>"; };
 		7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchAtFueled.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0D957F1BE9418B00244DC2 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		DCF1AE501BE2A3C400A891A9 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				DCF1AE6C1BE421FE00A891A9 /* Venue.swift */,
+				DC0D957F1BE9418B00244DC2 /* Tip.swift */,
 				DCF1AE711BE43ABC00A891A9 /* APIModel.swift */,
 			);
 			name = Model;
@@ -274,6 +277,7 @@
 				DCF1AE671BE2B38B00A891A9 /* FriendsViewController.swift in Sources */,
 				DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */,
 				DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */,
+				DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */,
 				DCF1AE681BE2B38B00A891A9 /* SearchTableViewController.swift in Sources */,
 				DCF1AE6B1BE2B3AF00A891A9 /* Cells.swift in Sources */,
 			);

@@ -29,7 +29,7 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let currentVenues = Venue.all() {
+        if let currentVenues = Venue.all([NSSortDescriptor(key: "distance", ascending: true)]) {
             allVenues = currentVenues as! [Venue]
         } else {
             allVenues = [Venue]()
@@ -164,6 +164,8 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
     func configureCellWithItem(cell:VenueTableViewCell, item: Venue) {
         
         cell.venueNameLabel.text = item.name
+        cell.venueCommentLabel.text = String(item.distance)
+        cell.venueRatingLabel.text = String(Tip.countWithAttribute("venueId", value: item.id))
         /*
         
         if venueInfo != nil {

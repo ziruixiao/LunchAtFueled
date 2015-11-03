@@ -25,7 +25,6 @@ class Connection {
         configuration.shouldControllNetworkActivityIndicator = true
         Session.setupSharedSessionWithConfiguration(configuration)
         session = Session.sharedSession()
-        session.logger = ConsoleLogger()
     }
     
     func isLoggedIn() -> Bool {
@@ -51,6 +50,20 @@ class Connection {
         task.start()
     }
     
+    func getTipsFromVenue(venueId: String) {
+        let task = self.session.venues.tips(venueId, parameters: nil) {
+            (result) -> Void in
+            if result.response != nil {
+                
+                if var tips = result.response!["tips"]!["items"] as? [[String: AnyObject]]  {
+                    tips.append(["venueId": venueId])
+                    Tip.process(tips)
+                    
+                }
+            }
+        }
+        task.start()
+    }
     
     
 }

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F1021" minimumToolsVersion="Automatic">
+    <entity name="Tip" representedClassName="Tip" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="venueId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Venue" representedClassName="Venue" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="checkins" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -15,5 +21,6 @@
     </entity>
     <elements>
         <element name="Venue" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Tip" positionX="-63" positionY="-27" width="128" height="105"/>
     </elements>
 </model>

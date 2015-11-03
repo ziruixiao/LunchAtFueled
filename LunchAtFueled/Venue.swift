@@ -33,17 +33,13 @@ class Venue : NSManagedObject {
         for record in records {
             if let recordID = record["id"] {
                 let newVenue = Venue.firstOrCreateWithAttribute("id", value: recordID) as! Venue
+                Connection.sharedInstance.getTipsFromVenue(recordID as! String)
                 newVenue.store(record)
             }
         }
     }
     
     func store(record: [String: AnyObject]) {
-        
-        if let recordId = record["id"] as? String {
-            id = recordId
-        }
-        
         if let recordName = record["name"] as? String {
             name = recordName
         }
@@ -101,7 +97,7 @@ class Venue : NSManagedObject {
             }
         }
         AERecord.saveContext()
-        
+        //print(record)
         /*
         print(record["id"])
         print(record["name"])
