@@ -18,6 +18,7 @@ class Connection {
     let redirectURL = "fsoauthexample://authorized";
     var session: Session!
     
+    /// Initializes the Foursquare session that can be used in the whole app
     func setupClient() {
         let client = Client(clientID: clientID, clientSecret: clientSecret, redirectURL: redirectURL)
         var configuration = Configuration(client: client)
@@ -27,13 +28,7 @@ class Connection {
         session = Session.sharedSession()
     }
     
-    func isLoggedIn() -> Bool {
-        if (session.isAuthorized()) {
-            return true;
-        }
-        return false;
-    }
-    
+    /// Takes in parameters and gets the 50 closest recommended venues from those parameters
     func getVenuesFromLocation(parameters: Parameters) {
         var newParameters = parameters
         newParameters["section"] = "food"
@@ -45,29 +40,29 @@ class Connection {
             if result.response != nil {
                 if let groups = result.response!["groups"] as? [[String: AnyObject]]  {
                     if let items = groups[0]["items"] as? [[String: AnyObject]] {
-                        Venue.process(items)
+                        Venue.process(items) // send JSON data to static APIModel function
                     }
-                    
-                    
                 }
             }
+            
+            // post a notification that venues have been loaded from the API
             NSNotificationCenter.defaultCenter().postNotificationName("VenuesLoaded", object: nil)
         }
         task.start()
     }
     
+    /// Takes in a venue id and loads the tips associated with it.
     func getTipsFromVenue(venueId: String) {
         let task = self.session.venues.tips(venueId, parameters: nil) {
             (result) -> Void in
             if result.response != nil {
-                
                 if var tips = result.response!["tips"]!["items"] as? [[String: AnyObject]]  {
                     tips.append(["venueId": venueId])
-                    Tip.process(tips)
-                    
+                    Tip.process(tips) // send JSON data to static APIModel function
                 }
             }
-            
+    
+            // post a notification that tips have been loaded from the API
             NSNotificationCenter.defaultCenter().postNotificationName("TipsLoaded", object: nil)
         }
         task.start()

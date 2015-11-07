@@ -6,9 +6,9 @@
 //  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
-import UIKit
 import AERecord
 import CoreData
+import UIKit
 
 class AddTipViewController: UIViewController {
 
@@ -19,13 +19,13 @@ class AddTipViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Done", style: .Done, target: self, action: "addTip")
         tipTextView.becomeFirstResponder()
-        
-        // Do any additional setup after loading the view.
     }
     
+    /// Validates the text view before adding a new tip and dismissing the page
     func addTip() {
-        //validate fields
+        // validate fields
         let allText = tipTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
         if (allText != "") {
             //add tip to CoreData and publish notification
             let newTip = Tip.create()
@@ -33,6 +33,8 @@ class AddTipViewController: UIViewController {
             newTip.venueId = venue.id
             newTip.text = allText
             AERecord.saveContext()
+            
+            // post notification to update table view with all tips
             NSNotificationCenter.defaultCenter().postNotificationName("TipsLoaded", object: nil)
             self.navigationController?.popViewControllerAnimated(true)
         } else {
@@ -40,16 +42,10 @@ class AddTipViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
 
 }

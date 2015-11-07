@@ -6,14 +6,13 @@
 //  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
-import Foundation
-import CoreData
 import AERecord
+import CoreData
+import Foundation
 
 @objc(Tip)
-class Tip : NSManagedObject {
+class Tip : NSManagedObject, APIModel {
     
-    // required fields
     @NSManaged var text: String
     @NSManaged var createdAt: NSDate
     @NSManaged var id: String

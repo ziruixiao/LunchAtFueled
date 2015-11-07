@@ -6,38 +6,31 @@
 //  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
-import Foundation
-import CoreData
 import AERecord
+import CoreData
+import Foundation
 
 @objc(Venue)
-class Venue : NSManagedObject {
+class Venue : NSManagedObject, APIModel{
     
-    // required fields
     @NSManaged var address: String
+    @NSManaged var checkins: Int
     @NSManaged var distance: Double
+    @NSManaged var hidden: Bool
     @NSManaged var id: String
     @NSManaged var latitude: Double
     @NSManaged var longitude: Double
     @NSManaged var name: String
-    @NSManaged var checkins: Int
-    @NSManaged var tips: Int
+    @NSManaged var photoURL: String?
     @NSManaged var rating: Double
     @NSManaged var ratingsCount: Int
-    @NSManaged var hidden: Bool
-    
-    // optional fields
-    @NSManaged var photoURL: String?
-    
-    
+    @NSManaged var tips: Int
     
     static func process(records: [[String:AnyObject]]) {
         for record in records {
             if let recordInfo = record["venue"] as? [String: AnyObject] {
                 if let recordID = recordInfo["id"] {
                     let newVenue = Venue.firstOrCreateWithAttribute("id", value: recordID) as! Venue
-                    // TODO: Call this upon page load in ViewController
-                    // Connection.sharedInstance.getTipsFromVenue(recordID as! String)
                     newVenue.store(recordInfo)
                 }
             }
@@ -104,22 +97,8 @@ class Venue : NSManagedObject {
                 tips = recordTips
             }
         }
+
         AERecord.saveContext()
-        //print(record)
-        /*
-        print(record["id"])
-        print(record["name"])
-        print(record["location"]!["distance"])
-        print(record["location"]!["lat"])
-        print(record["location"]!["lng"])
-        print(record["contact"]!["phone"])
-        print(record["facebook"]) //www.facebook.com/VALUE
-        print(record["twitter"]) //www.twitter.com/VALUE
-        print(record["location"]!["formattedAddress"])
-        print(record["categories"]!["icon"]!!["prefix"]) //photoURL
-        print(record["categories"]!["icon"]!!["suffix"]) //.png
-        print(record["stats"]!["checkinsCount"]) // number of check ins
-        */
     }
     
 }

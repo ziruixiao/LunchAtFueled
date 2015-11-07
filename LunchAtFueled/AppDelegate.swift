@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 Felix Xiao. All rights reserved.
 //
 
-import UIKit
-import QuadratTouch
 import AERecord
-import CoreLocation
 import CoreData
+import CoreLocation
+import QuadratTouch
+import UIKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,9 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-            print( NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!)
+            
+            // NOTE: Uncomment the line below to access the Documents folder
+            //print(NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!)
+            
+            // Open the database so it can be accessed, accounting for versioning
             do {
-                //Open the database so it can be accessed.
                 let modelURL = NSBundle.mainBundle().URLForResource("LunchAtFueled", withExtension: "momd")
                 let myStoreType = NSSQLiteStoreType
                 let myStoreURL = AERecord.storeURLForName("LunchAtFueled")
@@ -31,23 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 print(error)
             }
+            
+            // TODO: UIConstraint warnings are suppressed for now.
             NSUserDefaults.standardUserDefaults().setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
             
-
+            // initial window UI setup
             self.window?.tintColor = UIColor(red: 71.0/255.0, green: 57.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+            
+            // initial Foursquare API connection
             Connection.sharedInstance.setupClient()
             
-            
+            // initial location (hard-coded as address of Fueled)
             let location = CLLocation(latitude: 40.724280, longitude: -73.997354)
-            
             let parameters = location.parameters()
+            
             Connection.sharedInstance.getVenuesFromLocation(parameters)
+            
             return true
-    }
-    
-    func application(application: UIApplication, openURL url: NSURL,
-        sourceApplication: String?, annotation: AnyObject) -> Bool {
-            return Session.sharedSession().handleURL(url)
     }
     
 }

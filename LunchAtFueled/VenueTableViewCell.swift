@@ -1,29 +1,31 @@
 //
-//  VenueCell.swift
-//  Demo-iOS
+//  VenueTableViewCell.swift
+//  LunchAtFueled
 //
-//  Created by Constantine Fry on 29/11/14.
-//  Copyright (c) 2014 Constantine Fry. All rights reserved.
+//  Created by Felix Xiao on 10/30/15.
+//  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
+import Cosmos
 import Foundation
 import UIKit
-import Cosmos
 
-/** A cell to display venue name, rating and user tip. */
 class VenueTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var ratingsCountView: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var userPhotoImageView: UIImageView!
-    
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueRatingLabel: UILabel!
     @IBOutlet weak var venueCommentLabel: UILabel!
     
-    @IBOutlet weak var ratingsCountView: UILabel!
-    @IBOutlet weak var ratingView: CosmosView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupView()
+    }
+    
+    /// Customizes the table view cell
+    func setupView() {
         userPhotoImageView.layer.cornerRadius = 4
         userPhotoImageView.layer.shouldRasterize = true
         userPhotoImageView.layer.rasterizationScale = UIScreen.mainScreen().scale
@@ -36,18 +38,3 @@ class VenueTableViewCell: UITableViewCell {
         self.userPhotoImageView.image = nil
     }
 }
-
-/** A cell to display user. */
-class FriendTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        photoImageView.layer.cornerRadius = 4
-        photoImageView.layer.shouldRasterize = true
-        photoImageView.layer.rasterizationScale = UIScreen.mainScreen().scale
-    }
-}
-
