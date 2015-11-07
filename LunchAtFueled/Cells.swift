@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Cosmos
 
 /** A cell to display venue name, rating and user tip. */
 class VenueTableViewCell: UITableViewCell {
@@ -19,12 +19,16 @@ class VenueTableViewCell: UITableViewCell {
     @IBOutlet weak var venueRatingLabel: UILabel!
     @IBOutlet weak var venueCommentLabel: UILabel!
     
+    @IBOutlet weak var ratingsCountView: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         userPhotoImageView.layer.cornerRadius = 4
         userPhotoImageView.layer.shouldRasterize = true
         userPhotoImageView.layer.rasterizationScale = UIScreen.mainScreen().scale
+        ratingView.settings.updateOnTouch = false
+        ratingView.settings.fillMode = .Precise
     }
     
     override func prepareForReuse() {

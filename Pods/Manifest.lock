@@ -1,15 +1,18 @@
 PODS:
   - AERecord (2.0.0)
+  - Cosmos (1.1.1)
   - FontAwesome.swift (0.6.2)
   - QuadratTouch (1.1.1)
 
 DEPENDENCIES:
   - AERecord
+  - Cosmos (~> 1.1)
   - FontAwesome.swift
   - QuadratTouch (>= 1.0)
 
 SPEC CHECKSUMS:
   AERecord: 63313541906da457a51d808c1e0244b494dbb59f
+  Cosmos: a1e31979093262edd64241e5482f3d8722f53c3a
   FontAwesome.swift: d40ac0a660f079c77945bab632ca20bf46ddc1ac
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
 

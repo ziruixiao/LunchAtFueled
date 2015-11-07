@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LunchAtFueled/AERecord.framework"
+  install_framework "Pods-LunchAtFueled/Cosmos.framework"
   install_framework "Pods-LunchAtFueled/FontAwesome_swift.framework"
   install_framework "Pods-LunchAtFueled/QuadratTouch.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LunchAtFueled/AERecord.framework"
+  install_framework "Pods-LunchAtFueled/Cosmos.framework"
   install_framework "Pods-LunchAtFueled/FontAwesome_swift.framework"
   install_framework "Pods-LunchAtFueled/QuadratTouch.framework"
 fi

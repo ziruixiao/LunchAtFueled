@@ -155,19 +155,8 @@ class ExploreViewController: UITableViewController, CLLocationManagerDelegate, S
         cell.venueNameLabel.text = item.name
         cell.venueRatingLabel.text = String(item.distance) + " mi"
         cell.venueCommentLabel.text = String(item.tips) + " tips"
-        /*
-        
-        if venueInfo != nil {
-            cell.venueNameLabel.text = venueInfo!["name"] as? String
-            if let rating = venueInfo!["rating"] as? CGFloat {
-                cell.venueRatingLabel.text = numberFormatter.stringFromNumber(rating)
-            }
-        }
-        if tips != nil  {
-            if let tip = tips!.first {
-                cell.venueCommentLabel.text = tip["text"] as? String
-            }
-        }*/
+        cell.ratingView.rating = item.rating/2.0
+        cell.ratingsCountView.text = "(" + String(item.ratingsCount) + ")"
         
     }
     
@@ -195,15 +184,14 @@ class ExploreViewController: UITableViewController, CLLocationManagerDelegate, S
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        // do soemthing here
+        openVenue(allVenues[indexPath.row])
     }
     
     
-    func openVenue(venue: JSONParameters) {
+    func openVenue(venue: Venue) {
         let viewController = Storyboard.create("venueDetails") as! VenueTipsViewController
-        viewController.venueId = venue["id"] as? String
-        viewController.session = Connection.sharedInstance.session
-        viewController.title = venue["name"] as? String
+        viewController.venue = venue
+        viewController.title = venue.name
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

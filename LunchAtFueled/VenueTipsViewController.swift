@@ -13,49 +13,34 @@ import QuadratTouch
 
 /** Shows tips related to a venue. */
 class VenueTipsViewController: UITableViewController {
-    var venueId: String?
-    var session: Session!
-    var tips: [JSONParameters]?
+    var allTips: [Tip]!
+    var venue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let currentTips = Tip.allWithAttribute("venueId", value: venue.id, sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)]) {
+            allTips = currentTips as! [Tip]
+        } else {
+            allTips = [Tip]()
+        }
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
-        let task = self.session.venues.get(self.venueId!) {
-            (result) -> Void in
-            if result.response != nil {
-                if let venue = result.response!["venue"] as? JSONParameters {
-                    if let tips = venue["tips"] as? JSONParameters {
-                        var tipItems = [JSONParameters]()
-                        if let groups = tips["groups"] as? [JSONParameters] {
-                            for group in groups {
-                                if let item = group["items"] as? [JSONParameters] {
-                                    tipItems += item
-                                }
-                            }
-                        }
-                        self.tips = tipItems
-                    }
-                }
-            } else {
-                // Show error.
-            }
-            self.tableView.reloadData()
-        }
-        task.start()
+        Connection.sharedInstance.getTipsFromVenue(venue.id)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.tips != nil {
-            return self.tips!.count
+        if self.allTips != nil {
+            return self.allTips!.count
         }
         return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
-        let tip = self.tips![indexPath.row]
-        cell.textLabel?.text = tip["text"] as? String
+        let tip = self.allTips![indexPath.row]
+        cell.textLabel?.text = tip.text
         return cell
     }
 }

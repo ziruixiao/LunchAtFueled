@@ -10,6 +10,7 @@ target 'LunchAtFueled' do
 pod 'QuadratTouch', '>= 1.0'
 pod 'FontAwesome.swift'
 pod 'AERecord'
+pod 'Cosmos', '~> 1.1'
 
 end
 
