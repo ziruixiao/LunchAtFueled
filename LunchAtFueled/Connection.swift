@@ -51,6 +51,7 @@ class Connection {
                     
                 }
             }
+            NSNotificationCenter.defaultCenter().postNotificationName("VenuesLoaded", object: nil)
         }
         task.start()
     }
@@ -66,6 +67,10 @@ class Connection {
                     
                 }
             }
+            
+            let tipNotification = "TipsLoaded"
+            print("posted " + tipNotification)
+            NSNotificationCenter.defaultCenter().postNotificationName(tipNotification, object: nil)
         }
         task.start()
     }

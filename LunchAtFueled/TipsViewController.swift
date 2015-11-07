@@ -19,15 +19,27 @@ class TipsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadTips()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        Connection.sharedInstance.getTipsFromVenue(venue.id)
+        let tipNotification = "TipsLoaded"
+        print(tipNotification)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTips", name: tipNotification, object: nil)
+    }
+    
+    func loadTips() {
         if let currentTips = Tip.allWithAttribute("venueId", value: venue.id, sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)]) {
             allTips = currentTips as! [Tip]
         } else {
             allTips = [Tip]()
         }
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44
-        Connection.sharedInstance.getTipsFromVenue(venue.id)
+    }
+    
+    func updateTips() {
+        loadTips()
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

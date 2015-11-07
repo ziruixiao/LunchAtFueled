@@ -18,11 +18,7 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let currentVenues = Venue.all([NSSortDescriptor(key: "distance", ascending: true)]) {
-            allVenues = currentVenues as! [Venue]
-        } else {
-            allVenues = [Venue]()
-        }
+        
         
         
         definesPresentationContext = true
@@ -31,6 +27,21 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
         
         exploreVenues()
         self.navigationItem.leftBarButtonItem?.title = "Reset"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateVenues", name: "VenuesLoaded", object: nil)
+        
+    }
+    func loadVenues() {
+        if let currentVenues = Venue.all([NSSortDescriptor(key: "distance", ascending: true)]) {
+            allVenues = currentVenues as! [Venue]
+        } else {
+            allVenues = [Venue]()
+        }
+    }
+    
+    func updateVenues() {
+        loadVenues()
+        self.tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
