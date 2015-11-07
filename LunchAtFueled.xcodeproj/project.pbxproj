@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6009C2DC9FA84D474531FA01 /* Pods_LunchAtFueled.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */; };
+		DC0D8A9C1BED6B2500E1A33A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */; };
 		DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D957F1BE9418B00244DC2 /* Tip.swift */; };
 		DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE501BE2A3C400A891A9 /* Connection.swift */; };
 		DCF1AE661BE2B38B00A891A9 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */; };
 		DCF1AE671BE2B38B00A891A9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */; };
-		DCF1AE681BE2B38B00A891A9 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */; };
 		DCF1AE691BE2B38B00A891A9 /* VenueTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */; };
 		DCF1AE6B1BE2B3AF00A891A9 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */; };
 		DCF1AE6D1BE421FE00A891A9 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE6C1BE421FE00A891A9 /* Venue.swift */; };
@@ -30,11 +30,11 @@
 		49168524D76A473A538A7E56 /* Pods-LunchAtFueled.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.debug.xcconfig"; sourceTree = "<group>"; };
 		6F7FBF439003B3A10C87D69C /* Pods-LunchAtFueled.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchAtFueled.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchAtFueled/Pods-LunchAtFueled.release.xcconfig"; sourceTree = "<group>"; };
 		7067D8B68E29BBD8AD6F9232 /* Pods_LunchAtFueled.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchAtFueled.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		DC0D957F1BE9418B00244DC2 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		DCF1AE501BE2A3C400A891A9 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTipsViewController.swift; sourceTree = "<group>"; };
 		DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		DCF1AE6C1BE421FE00A891A9 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -92,6 +92,9 @@
 		DCF1AE5A1BE2AAC400A891A9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */,
+				DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */,
+				DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 				DCFACA1D1BE1D88700AD0EE7 /* MVC.png */,
 				DCFACA1B1BE1D48E00AD0EE7 /* README.md */,
 				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
+				DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,11 +136,7 @@
 				DCFACA041BE1D0C400AD0EE7 /* AppDelegate.swift */,
 				DCFACA0D1BE1D0C400AD0EE7 /* Main.storyboard */,
 				DCFACA061BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld */,
-				DCF1AE611BE2B38B00A891A9 /* ExploreViewController.swift */,
-				DCF1AE621BE2B38B00A891A9 /* FriendsViewController.swift */,
-				DCF1AE631BE2B38B00A891A9 /* SearchTableViewController.swift */,
 				DCF1AE6A1BE2B3AF00A891A9 /* Cells.swift */,
-				DCF1AE641BE2B38B00A891A9 /* VenueTipsViewController.swift */,
 				DCF1AE501BE2A3C400A891A9 /* Connection.swift */,
 				DCF1AE591BE2AABD00A891A9 /* Model */,
 				DCF1AE5A1BE2AAC400A891A9 /* View Controllers */,
@@ -269,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCF1AE691BE2B38B00A891A9 /* VenueTipsViewController.swift in Sources */,
+				DC0D8A9C1BED6B2500E1A33A /* Double+Extensions.swift in Sources */,
 				DCF1AE6D1BE421FE00A891A9 /* Venue.swift in Sources */,
 				DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */,
 				DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */,
@@ -278,7 +279,6 @@
 				DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */,
 				DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */,
 				DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */,
-				DCF1AE681BE2B38B00A891A9 /* SearchTableViewController.swift in Sources */,
 				DCF1AE6B1BE2B3AF00A891A9 /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +393,9 @@
 			baseConfigurationReference = 49168524D76A473A538A7E56 /* Pods-LunchAtFueled.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_ERRORS = NO;
+				IBSC_NOTICES = NO;
+				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = LunchAtFueled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixxiao.LunchAtFueled;
@@ -405,6 +408,9 @@
 			baseConfigurationReference = 6F7FBF439003B3A10C87D69C /* Pods-LunchAtFueled.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_ERRORS = NO;
+				IBSC_NOTICES = NO;
+				IBSC_WARNINGS = NO;
 				INFOPLIST_FILE = LunchAtFueled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixxiao.LunchAtFueled;

@@ -36,13 +36,18 @@ class Connection {
     
     func getVenuesFromLocation(parameters: Parameters) {
         var newParameters = parameters
-        newParameters["query"] = "restaurant"
+        newParameters["section"] = "food"
         newParameters["limit"] = "50"
-        let task = self.session.venues.search(newParameters) {
+        newParameters["sortByDistance"] = "1"
+        newParameters["venuePhotos"] = "1"
+        let task = self.session.venues.explore(newParameters) {
             (result) -> Void in
             if result.response != nil {
-                if let venues = result.response!["venues"] as? [[String: AnyObject]]  {
-                    Venue.process(venues)
+                if let groups = result.response!["groups"] as? [[String: AnyObject]]  {
+                    if let items = groups[0]["items"] as? [[String: AnyObject]] {
+                        Venue.process(items)
+                    }
+                    
                     
                 }
             }

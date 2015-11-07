@@ -14,10 +14,8 @@ import QuadratTouch
 typealias JSONParameters = [String: AnyObject]
 
 /** Shows result from `explore` endpoint. And has search controller to search in nearby venues. */
-class ExploreViewController: UITableViewController, CLLocationManagerDelegate,
-SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
+class ExploreViewController: UITableViewController, CLLocationManagerDelegate, SessionAuthorizationDelegate {
     var searchController: UISearchController!
-    var resultsTableViewController: SearchTableViewController!
     
     var locationManager : CLLocationManager!
     
@@ -38,17 +36,9 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
         numberFormatter.numberStyle = .DecimalStyle
         
         
-        resultsTableViewController = Storyboard.create("venueSearch") as! SearchTableViewController
-        resultsTableViewController.session = Connection.sharedInstance.session
-        resultsTableViewController.delegate = self
-        searchController = UISearchController(searchResultsController: resultsTableViewController)
-        searchController.searchResultsUpdater = resultsTableViewController
-        searchController.searchBar.sizeToFit()
-        tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 120
         
         exploreVenues()
         locationManager = CLLocationManager()
@@ -122,7 +112,6 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
             if allVenues.count < 1 {
                 exploreVenues()
             }
-            resultsTableViewController.location = newLocation
             locationManager.stopUpdatingLocation()
     }
     
@@ -164,8 +153,8 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
     func configureCellWithItem(cell:VenueTableViewCell, item: Venue) {
         
         cell.venueNameLabel.text = item.name
-        cell.venueCommentLabel.text = String(item.distance)
-        cell.venueRatingLabel.text = String(Tip.countWithAttribute("venueId", value: item.id))
+        cell.venueRatingLabel.text = String(item.distance) + " mi"
+        cell.venueCommentLabel.text = String(item.tips) + " tips"
         /*
         
         if venueInfo != nil {
@@ -186,7 +175,6 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
         willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
             let cell = cell as! VenueTableViewCell
             if let photoURL = self.allVenues[indexPath.row].photoURL {
-                print(photoURL)
                 let URL = NSURL(string: photoURL)
             if let imageData = Connection.sharedInstance.session.cachedImageDataForURL(URL!)  {
                 cell.userPhotoImageView.image = UIImage(data: imageData)
@@ -210,9 +198,6 @@ SearchTableViewControllerDelegate, SessionAuthorizationDelegate {
         // do soemthing here
     }
     
-    func searchTableViewController(controller: SearchTableViewController, didSelectVenue venue:JSONParameters) {
-        openVenue(venue)
-    }
     
     func openVenue(venue: JSONParameters) {
         let viewController = Storyboard.create("venueDetails") as! VenueTipsViewController

@@ -10,17 +10,17 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="checkins" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="facebook" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ratingsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="tips" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Venue" positionX="-63" positionY="-18" width="128" height="30"/>
         <element name="Tip" positionX="-63" positionY="-27" width="128" height="105"/>
+        <element name="Venue" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>
