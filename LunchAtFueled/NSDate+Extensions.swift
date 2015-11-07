@@ -152,7 +152,7 @@ extension NSDate {
                 return "\(components.second) sec ago"
             }
         } else {
-            return "just now"
+            return " just now"
         }
         
     }

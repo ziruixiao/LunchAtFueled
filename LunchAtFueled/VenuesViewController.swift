@@ -19,7 +19,7 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
         super.viewDidLoad()
         
         
-        
+        loadVenues()
         
         definesPresentationContext = true
         

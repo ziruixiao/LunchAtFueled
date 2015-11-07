@@ -68,9 +68,7 @@ class Connection {
                 }
             }
             
-            let tipNotification = "TipsLoaded"
-            print("posted " + tipNotification)
-            NSNotificationCenter.defaultCenter().postNotificationName(tipNotification, object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("TipsLoaded", object: nil)
         }
         task.start()
     }

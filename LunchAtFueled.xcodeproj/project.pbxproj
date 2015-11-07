@@ -11,6 +11,7 @@
 		DC0D8A9C1BED6B2500E1A33A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */; };
 		DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D957F1BE9418B00244DC2 /* Tip.swift */; };
 		DCEDD4CD1BEDB5DF0098D1D7 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDD4CC1BEDB5DF0098D1D7 /* NSDate+Extensions.swift */; };
+		DCEDD4D01BEDB9720098D1D7 /* AddTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDD4CF1BEDB9720098D1D7 /* AddTipViewController.swift */; };
 		DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE501BE2A3C400A891A9 /* Connection.swift */; };
 		DCF1AE661BE2B38B00A891A9 /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE611BE2B38B00A891A9 /* VenuesViewController.swift */; };
 		DCF1AE691BE2B38B00A891A9 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE641BE2B38B00A891A9 /* TipsViewController.swift */; };
@@ -33,6 +34,7 @@
 		DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		DC0D957F1BE9418B00244DC2 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		DCEDD4CC1BEDB5DF0098D1D7 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
+		DCEDD4CF1BEDB9720098D1D7 /* AddTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipViewController.swift; sourceTree = "<group>"; };
 		DCF1AE501BE2A3C400A891A9 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		DCF1AE611BE2B38B00A891A9 /* VenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesViewController.swift; sourceTree = "<group>"; };
 		DCF1AE641BE2B38B00A891A9 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				DCF1AE611BE2B38B00A891A9 /* VenuesViewController.swift */,
 				DCF1AE641BE2B38B00A891A9 /* TipsViewController.swift */,
+				DCEDD4CF1BEDB9720098D1D7 /* AddTipViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */,
 				DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */,
 				DCF1AE721BE43ABC00A891A9 /* APIModel.swift in Sources */,
+				DCEDD4D01BEDB9720098D1D7 /* AddTipViewController.swift in Sources */,
 				DCF1AE661BE2B38B00A891A9 /* VenuesViewController.swift in Sources */,
 				DCFACA051BE1D0C400AD0EE7 /* AppDelegate.swift in Sources */,
 				DCFACA1C1BE1D48E00AD0EE7 /* README.md in Sources */,
