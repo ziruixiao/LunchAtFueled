@@ -15,7 +15,7 @@ class Tip : NSManagedObject {
     
     // required fields
     @NSManaged var text: String
-    @NSManaged var createdAt: String
+    @NSManaged var createdAt: NSDate
     @NSManaged var id: String
     @NSManaged var venueId: String
     
@@ -34,6 +34,7 @@ class Tip : NSManagedObject {
     }
     
     func store(record: [String: AnyObject]) {
+
         if let recordId = record["id"] as? String {
             id = recordId
         }
@@ -42,8 +43,8 @@ class Tip : NSManagedObject {
             text = recordText
         }
         
-        if let recordCreatedAt = record["createdAt"] as? String {
-            createdAt = recordCreatedAt
+        if let recordCreatedAt = record["createdAt"] as? Double {
+            createdAt = NSDate(timeIntervalSince1970: NSTimeInterval(recordCreatedAt))
         }
         
         AERecord.saveContext()

@@ -11,7 +11,7 @@ LunchAtFueled makes use of the following technologies:
 * [das-quadrat] - FourSquare wrapper using Swift. 
 * [AERecord] - Swift wrapper for CoreData.
 * [Font Awesome] - Swift implementation for Font Awesome.
-
+* [Cosmos] - 5 star rating UIKit module.
 
 [das-quadrat]: <https://github.com/Constantine-Fry/das-quadrat>
 [Foursquare Libraries]: <https://developer.foursquare.com/resources/libraries>
@@ -19,4 +19,5 @@ LunchAtFueled makes use of the following technologies:
 <https://github.com/tadija/AERecord>
 [Font Awesome]:
 <https://github.com/thii/FontAwesome.swift>
-
+[Cosmos]:
+<https://github.com/exchangegroup/Cosmos>

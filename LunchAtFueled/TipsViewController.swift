@@ -1,9 +1,9 @@
 //
-//  VenueDetailViewController.swift
-//  Demo-iOS
+//  TipsViewController.swift
+//  LunchAtFueled
 //
-//  Created by Constantine Fry on 29/11/14.
-//  Copyright (c) 2014 Constantine Fry. All rights reserved.
+//  Created by Felix Xiao on 10/30/15.
+//  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ import UIKit
 import QuadratTouch
 
 /** Shows tips related to a venue. */
-class VenueTipsViewController: UITableViewController {
+class TipsViewController: UITableViewController {
     var allTips: [Tip]!
     var venue: Venue!
     
@@ -40,7 +40,9 @@ class VenueTipsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
         let tip = self.allTips![indexPath.row]
+        
         cell.textLabel?.text = tip.text
+        cell.detailTextLabel?.text = tip.createdAt.timeAgoSinceDateWithNumeric(true)
         return cell
     }
 }

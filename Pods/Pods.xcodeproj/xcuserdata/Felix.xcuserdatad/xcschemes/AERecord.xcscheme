@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '07329562182A1179D73C4283'
+               BlueprintIdentifier = '68DC82406E7E7D14CD5FB1EA'
                BlueprintName = 'AERecord'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AERecord.framework'>

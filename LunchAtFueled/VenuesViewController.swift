@@ -1,9 +1,9 @@
 //
-//  FirstViewController.swift
-//  Demo-iOS
+//  VenuesViewController.swift
+//  LunchAtFueled
 //
-//  Created by Constantine Fry on 08/11/14.
-//  Copyright (c) 2014 Constantine Fry. All rights reserved.
+//  Created by Felix Xiao on 10/30/15.
+//  Copyright © 2015 Felix Xiao. All rights reserved.
 //
 
 import UIKit
@@ -11,18 +11,9 @@ import CoreLocation
 
 import QuadratTouch
 
-typealias JSONParameters = [String: AnyObject]
-
-/** Shows result from `explore` endpoint. And has search controller to search in nearby venues. */
-class ExploreViewController: UITableViewController, CLLocationManagerDelegate, SessionAuthorizationDelegate {
-    var searchController: UISearchController!
-    
-    var locationManager : CLLocationManager!
+class VenuesViewController: UITableViewController, CLLocationManagerDelegate, SessionAuthorizationDelegate {
     
     var allVenues: [Venue]!
-    
-    /** Number formatter for rating. */
-    let numberFormatter = NSNumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,86 +24,17 @@ class ExploreViewController: UITableViewController, CLLocationManagerDelegate, S
             allVenues = [Venue]()
         }
         
-        numberFormatter.numberStyle = .DecimalStyle
-        
         
         definesPresentationContext = true
         
         tableView.rowHeight = 120
         
         exploreVenues()
-        locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.delegate = self
-        let status = CLLocationManager.authorizationStatus()
-        if status == .NotDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        } else if status == CLAuthorizationStatus.AuthorizedWhenInUse
-            || status == CLAuthorizationStatus.AuthorizedAlways {
-                locationManager.startUpdatingLocation()
-        } else {
-            showNoPermissionsAlert()
-        }
+        self.navigationItem.leftBarButtonItem?.title = "Reset"
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateLeftBarButton()
-    }
-    
-    private func updateLeftBarButton() {
-        if Connection.sharedInstance.isLoggedIn() {
-            self.navigationItem.leftBarButtonItem?.title = "Logout"
-        } else {
-            self.navigationItem.leftBarButtonItem?.title = "Login"
-        }
-    }
-    
-    
-    func showNoPermissionsAlert() {
-        let alertController = UIAlertController(title: "No permission",
-            message: "In order to work, app needs your location", preferredStyle: .Alert)
-        let openSettings = UIAlertAction(title: "Open settings", style: .Default, handler: {
-            (action) -> Void in
-            let URL = NSURL(string: UIApplicationOpenSettingsURLString)
-            UIApplication.sharedApplication().openURL(URL!)
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
-        alertController.addAction(openSettings)
-        presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    func showErrorAlert(error: NSError) {
-        let alertController = UIAlertController(title: "Error",
-            message:error.localizedDescription, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: {
-            (action) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
-        alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .Denied || status == .Restricted {
-            showNoPermissionsAlert()
-        } else {
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        // Process error.
-        // kCLErrorDomain. Not localized.
-        showErrorAlert(error)
-    }
-    
-    func locationManager(manager: CLLocationManager,
-        didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-            if allVenues.count < 1 {
-                exploreVenues()
-            }
-            locationManager.stopUpdatingLocation()
     }
     
     func exploreVenues() {
@@ -124,17 +46,7 @@ class ExploreViewController: UITableViewController, CLLocationManagerDelegate, S
     }
     
     @IBAction func authorizeButtonTapped() {
-        if Connection.sharedInstance.isLoggedIn() {
-            Connection.sharedInstance.session.deauthorize()
-            self.updateLeftBarButton()
-            self.exploreVenues()
-        } else {
-            Connection.sharedInstance.session.authorizeWithViewController(self, delegate: self) {
-                (authorized, error) -> Void in
-                self.updateLeftBarButton()
-                self.exploreVenues()
-            }
-        }
+        // TODO: Reset likes and dislikes in table
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -189,7 +101,7 @@ class ExploreViewController: UITableViewController, CLLocationManagerDelegate, S
     
     
     func openVenue(venue: Venue) {
-        let viewController = Storyboard.create("venueDetails") as! VenueTipsViewController
+        let viewController = Storyboard.create("venueDetails") as! TipsViewController
         viewController.venue = venue
         viewController.title = venue.name
         self.navigationController?.pushViewController(viewController, animated: true)
