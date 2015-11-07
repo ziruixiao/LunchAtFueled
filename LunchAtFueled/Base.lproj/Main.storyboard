@@ -190,9 +190,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lunch At Fueled" id="qbA-gD-5o9">
-                        <barButtonItem key="leftBarButtonItem" title="Login" id="8NX-jX-faq">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="8NX-jX-faq">
                             <connections>
-                                <action selector="authorizeButtonTapped" destination="El3-id-vnC" id="b8N-7I-5L2"/>
+                                <action selector="resetButtonTapped" destination="El3-id-vnC" id="em0-kC-K6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

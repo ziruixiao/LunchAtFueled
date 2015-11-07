@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-
+import AERecord
 import QuadratTouch
 
 class VenuesViewController: UITableViewController, CLLocationManagerDelegate, SessionAuthorizationDelegate {
@@ -32,7 +32,7 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
         
     }
     func loadVenues() {
-        if let currentVenues = Venue.all([NSSortDescriptor(key: "distance", ascending: true)]) {
+        if let currentVenues = Venue.allWithAttribute("hidden", value: false, sortDescriptors: [NSSortDescriptor(key: "distance", ascending: true)]) {
             allVenues = currentVenues as! [Venue]
         } else {
             allVenues = [Venue]()
@@ -56,12 +56,14 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
         Connection.sharedInstance.getVenuesFromLocation(parameters)
     }
     
-    @IBAction func authorizeButtonTapped() {
-        // TODO: Reset likes and dislikes in table
+    @IBAction func resetButtonTapped() {
+        Venue.batchUpdate(properties: ["hidden" : false])
+        updateVenues()
+
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Venue.count()
+        return Venue.countWithAttribute("hidden", value: false)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -126,23 +128,42 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate, Se
     func sessionWillDismissAuthorizationViewController(controller: AuthorizationViewController) {
         print("Will disimiss authorization view controller.")
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let alert = UIAlertController(title: "Are you sure?", message: "This venue won't appear again unless you press the 'Reset' button.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                switch action.style{
+                case .Default:
+                    // "delete" the venue
+                    let toHide = self.allVenues[indexPath.row]
+                    toHide.hidden = true
+                    AERecord.saveContext()
+                    self.allVenues.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    break
+                    
+                case .Cancel:
+                    print("cancel")
+                    break
+                    
+                case .Destructive:
+                    print("")
+                    break
+                }
+            }))
+            
+            //numbers.removeAtIndex(indexPath.row)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+   
 }
 
-extension CLLocation {
-    func parameters() -> Parameters {
-        let ll      = "\(self.coordinate.latitude),\(self.coordinate.longitude)"
-        let llAcc   = "\(self.horizontalAccuracy)"
-        let alt     = "\(self.altitude)"
-        let altAcc  = "\(self.verticalAccuracy)"
-        let parameters = [
-            Parameter.ll:ll,
-            Parameter.llAcc:llAcc,
-            Parameter.alt:alt,
-            Parameter.altAcc:altAcc
-        ]
-        return parameters
-    }
-}
+
 
 
 class Storyboard: UIStoryboard {

@@ -24,6 +24,7 @@ class Venue : NSManagedObject {
     @NSManaged var tips: Int
     @NSManaged var rating: Double
     @NSManaged var ratingsCount: Int
+    @NSManaged var hidden: Bool
     
     // optional fields
     @NSManaged var photoURL: String?

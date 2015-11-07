@@ -12,6 +12,7 @@
 		DC0D95801BE9418B00244DC2 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D957F1BE9418B00244DC2 /* Tip.swift */; };
 		DCEDD4CD1BEDB5DF0098D1D7 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDD4CC1BEDB5DF0098D1D7 /* NSDate+Extensions.swift */; };
 		DCEDD4D01BEDB9720098D1D7 /* AddTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDD4CF1BEDB9720098D1D7 /* AddTipViewController.swift */; };
+		DCEDD4D21BEDBEEC0098D1D7 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDD4D11BEDBEEC0098D1D7 /* CLLocation+Extensions.swift */; };
 		DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE501BE2A3C400A891A9 /* Connection.swift */; };
 		DCF1AE661BE2B38B00A891A9 /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE611BE2B38B00A891A9 /* VenuesViewController.swift */; };
 		DCF1AE691BE2B38B00A891A9 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1AE641BE2B38B00A891A9 /* TipsViewController.swift */; };
@@ -35,6 +36,7 @@
 		DC0D957F1BE9418B00244DC2 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		DCEDD4CC1BEDB5DF0098D1D7 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		DCEDD4CF1BEDB9720098D1D7 /* AddTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipViewController.swift; sourceTree = "<group>"; };
+		DCEDD4D11BEDBEEC0098D1D7 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
 		DCF1AE501BE2A3C400A891A9 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		DCF1AE611BE2B38B00A891A9 /* VenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesViewController.swift; sourceTree = "<group>"; };
 		DCF1AE641BE2B38B00A891A9 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				DCFACA121BE1D0C400AD0EE7 /* LaunchScreen.storyboard */,
 				DC0D8A9B1BED6B2500E1A33A /* Double+Extensions.swift */,
 				DCEDD4CC1BEDB5DF0098D1D7 /* NSDate+Extensions.swift */,
+				DCEDD4D11BEDBEEC0098D1D7 /* CLLocation+Extensions.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				DCEDD4CD1BEDB5DF0098D1D7 /* NSDate+Extensions.swift in Sources */,
 				DCF1AE691BE2B38B00A891A9 /* TipsViewController.swift in Sources */,
 				DC0D8A9C1BED6B2500E1A33A /* Double+Extensions.swift in Sources */,
+				DCEDD4D21BEDBEEC0098D1D7 /* CLLocation+Extensions.swift in Sources */,
 				DCF1AE6D1BE421FE00A891A9 /* Venue.swift in Sources */,
 				DCFACA081BE1D0C400AD0EE7 /* LunchAtFueled.xcdatamodeld in Sources */,
 				DCF1AE511BE2A3C400A891A9 /* Connection.swift in Sources */,
