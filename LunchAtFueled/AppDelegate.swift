@@ -45,12 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // initial Foursquare API connection
             Connection.sharedInstance.setupClient()
             
-            // initial location (hard-coded as address of Fueled)
-            let location = CLLocation(latitude: 40.724280, longitude: -73.997354)
-            let parameters = location.parameters()
-            
-            Connection.sharedInstance.getVenuesFromLocation(parameters)
-            
             return true
     }
     
